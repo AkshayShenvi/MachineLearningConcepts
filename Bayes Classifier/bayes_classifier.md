@@ -30,4 +30,6 @@ To have a general view of the data (i.e training data).
 ```python
 data.head(10)
 ```
+![Image of 10 rows of training data](https://github.com/AkshayShenvi/MachineLearningConcepts/blob/master/Bayes%20Classifier/Images/data_example.PNG)
 
+We can see through the above image that there are 17 columns (i.e 0-16) where the columns 0-15 are the features or inputs, while the last column is labels or target.
