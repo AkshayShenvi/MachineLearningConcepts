@@ -39,3 +39,6 @@ Another way of knowing your data in general is printing out the shape of the dat
 ```python
 data.shape
 ```
+![Image of Shape of the dataset](https://github.com/AkshayShenvi/MachineLearningConcepts/blob/master/Bayes%20Classifier/Images/data_shape.PNG)
+
+
