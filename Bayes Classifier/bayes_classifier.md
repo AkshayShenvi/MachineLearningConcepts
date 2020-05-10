@@ -41,4 +41,15 @@ data.shape
 ```
 ![Image of Shape of the dataset](https://github.com/AkshayShenvi/MachineLearningConcepts/blob/master/Bayes%20Classifier/Images/data_shape.PNG)
 
+Here as we can see here the dataset consists of 7494 rows (data objects) and 17 columns of which the last column is the target column.
+
+Next, we want to separate out the features from the target, so we take the index of the target.
+
+```python
+index_of_label=(data.shape[1])-1
+```
+And then the index of the features.
+```python
+index_of_features=(data.shape[1])-2
+```
 
