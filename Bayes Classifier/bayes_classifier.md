@@ -53,12 +53,12 @@ And then the index of the features.
 index_of_features=(data.shape[1])-2
 ```
 
-Next we would need the total number of data objects.
+Next, we would need the total number of data objects.
 ```python
 total_labels=data[index_of_label].count()
 ```
 
-We would also need to take out the unique classes, count of each class and frequency of each class.
+We would also need to take out the unique classes, count of each class, and frequency of each class.
 ```python
 #Unique Classes
 unique_classes=sorted(data[index_of_label].unique())
@@ -69,4 +69,17 @@ label_probability=data.iloc[:,-1].value_counts()
 #Per Class Frequency
 per_class_probability=label_probability/total_labels
 ```
+
+As in this Bayes Classifier, we will be assuming that the data is of Gaussian Distribution (i.e. we will use Gaussian as our basis function). You can replace this by your own basis function.
+
+For Gaussian Distribution, we would need to calculate the mean and the standard deviation of each feature and their classes.
+
+```python
+# Data mean
+data_means = data.groupby(index_of_label).mean()
+
+# Data variance
+data_variance = data.groupby(index_of_label).var()
+```
+Our mean and std would look like this:
 
