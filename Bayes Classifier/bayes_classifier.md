@@ -24,7 +24,7 @@ We would be using **pd.read_csv** with **"\s+"** as the seperator as our dataset
 data= pd.read_csv(str(sys.argv[1]),sep="\s+",header=None)
 data_test=pd.read_csv(str(sys.argv[2]),sep="\s+",header=None)
 
-```
+``` 
 
 To have a general view of the data (i.e training data).
 ```python
@@ -51,5 +51,22 @@ index_of_label=(data.shape[1])-1
 And then the index of the features.
 ```python
 index_of_features=(data.shape[1])-2
+```
+
+Next we would need the total number of data objects.
+```python
+total_labels=data[index_of_label].count()
+```
+
+We would also need to take out the unique classes, count of each class and frequency of each class.
+```python
+#Unique Classes
+unique_classes=sorted(data[index_of_label].unique())
+
+# Frequency of each class
+label_probability=data.iloc[:,-1].value_counts()
+
+#Per Class Frequency
+per_class_probability=label_probability/total_labels
 ```
 
