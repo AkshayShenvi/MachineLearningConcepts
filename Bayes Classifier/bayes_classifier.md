@@ -72,7 +72,7 @@ per_class_probability=label_probability/total_labels
 
 As in this Bayes Classifier, we will be assuming that the data is of Gaussian Distribution (i.e. we will use Gaussian as our basis function). You can replace this by your own basis function.
 
-For Gaussian Distribution, we would need to calculate the mean and the standard deviation of each feature and their classes.
+For Gaussian Distribution, we would need to calculate the mean and the variance of each feature and their classes.
 
 ```python
 # Data mean
@@ -81,5 +81,18 @@ data_means = data.groupby(index_of_label).mean()
 # Data variance
 data_variance = data.groupby(index_of_label).var()
 ```
-Our mean and std would look like this:
+Our mean and variances would look like this:
+
+**Mean**
+![Image of mean](https://github.com/AkshayShenvi/MachineLearningConcepts/blob/master/Bayes%20Classifier/Images/means.PNG)
+
+**Variance**
+![Image of variance](https://github.com/AkshayShenvi/MachineLearningConcepts/blob/master/Bayes%20Classifier/Images/var.PNG)
+
+Next, we will limit our variance to 0.0001(i.e. If the variance is less than 0.0001 we would replace it with 0.0001). This would help us to avoid a variance with 0 as its value.
+```python
+#Limit Variance to 0.0001 i.e (SD to 0.01)
+corr_var=data_variance
+corr_var[corr_var.iloc[:,:] < 0.0001]= 0.0001
+```
 
